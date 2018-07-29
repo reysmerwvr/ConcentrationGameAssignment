@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93701F85210AB4AA005F2562 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93701F84210AB4AA005F2562 /* Card.swift */; };
+		93701F89210ABF62005F2562 /* ConcentrationGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93701F88210ABF62005F2562 /* ConcentrationGame.swift */; };
 		93D777FE20F300CC009CF0CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D777FD20F300CC009CF0CA /* AppDelegate.swift */; };
 		93D7780020F300CC009CF0CA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D777FF20F300CC009CF0CA /* ViewController.swift */; };
 		93D7780320F300CC009CF0CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93D7780120F300CC009CF0CA /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		93701F84210AB4AA005F2562 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		93701F88210ABF62005F2562 /* ConcentrationGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationGame.swift; sourceTree = "<group>"; };
 		93D777FA20F300CC009CF0CA /* ConcentrationGameAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConcentrationGameAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93D777FD20F300CC009CF0CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93D777FF20F300CC009CF0CA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +39,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		93701F86210ABB41005F2562 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				93701F84210AB4AA005F2562 /* Card.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		93701F87210ABB55005F2562 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				93D777FF20F300CC009CF0CA /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		93701F8A210ABF6C005F2562 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				93701F88210ABF62005F2562 /* ConcentrationGame.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		93BB83F420F590B000CB4958 /* Supportting Files */ = {
+			isa = PBXGroup;
+			children = (
+				93D777FD20F300CC009CF0CA /* AppDelegate.swift */,
+				93D7780420F300D2009CF0CA /* Assets.xcassets */,
+				93D7780620F300D2009CF0CA /* LaunchScreen.storyboard */,
+			);
+			path = "Supportting Files";
+			sourceTree = "<group>";
+		};
 		93D777F120F300CC009CF0CA = {
 			isa = PBXGroup;
 			children = (
@@ -54,12 +92,12 @@
 		93D777FC20F300CC009CF0CA /* ConcentrationGameAssignment */ = {
 			isa = PBXGroup;
 			children = (
-				93D777FD20F300CC009CF0CA /* AppDelegate.swift */,
-				93D777FF20F300CC009CF0CA /* ViewController.swift */,
+				93BB83F420F590B000CB4958 /* Supportting Files */,
+				93701F87210ABB55005F2562 /* Controllers */,
 				93D7780120F300CC009CF0CA /* Main.storyboard */,
-				93D7780420F300D2009CF0CA /* Assets.xcassets */,
-				93D7780620F300D2009CF0CA /* LaunchScreen.storyboard */,
 				93D7780920F300D2009CF0CA /* Info.plist */,
+				93701F86210ABB41005F2562 /* Structs */,
+				93701F8A210ABF6C005F2562 /* Models */,
 			);
 			path = ConcentrationGameAssignment;
 			sourceTree = "<group>";
@@ -136,7 +174,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				93D7780020F300CC009CF0CA /* ViewController.swift in Sources */,
+				93701F85210AB4AA005F2562 /* Card.swift in Sources */,
 				93D777FE20F300CC009CF0CA /* AppDelegate.swift in Sources */,
+				93701F89210ABF62005F2562 /* ConcentrationGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

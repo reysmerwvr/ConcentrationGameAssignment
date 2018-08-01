@@ -18,6 +18,7 @@ class ConcentrationGame {
             let card = Card()
             cards += [card, card]
         }
+        cards = shuffleCardsArray(originalArray: cards) as! [Card]
     }
     
     func selectCard(at index: Int) -> Void {

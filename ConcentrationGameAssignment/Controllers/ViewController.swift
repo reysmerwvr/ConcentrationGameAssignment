@@ -14,13 +14,23 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var flipCountLabel: UILabel!
     
+    @IBOutlet weak var scoreCountLabel: UILabel!
+    
     var concentrationGame: ConcentrationGame?
     
     var theme: Theme?
     
     var flipCount: Int = 0 {
         didSet {
+            print("Called after setting the new value on flipCount")
             flipCountLabel.text = "Flips: \(flipCount)"
+        }
+    }
+    
+    var scoreCount: Int = 0 {
+        didSet {
+            print("Called after setting the new value on scoreCount")
+            scoreCountLabel.text = "Score: \(scoreCount)"
         }
     }
     
@@ -39,6 +49,11 @@ class ViewController: UIViewController {
             let card = concentrationGame!.cards[cardNumber]
             if(!card.isMatched) {
                 flipCount += 1
+                if(card.seenCount > 1 && scoreCount > 0) {
+                    scoreCount = scoreCount - 1
+                }
+            } else {
+                scoreCount += 2
             }
         }
     }
@@ -47,6 +62,7 @@ class ViewController: UIViewController {
         self.concentrationGame = ConcentrationGame(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
         self.theme = Theme()
         self.flipCount = 0
+        self.scoreCount = 0
         resetView()
     }
     

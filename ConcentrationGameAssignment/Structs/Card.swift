@@ -12,6 +12,7 @@ struct Card {
     var uuid: String
     var isFaceUp = false
     var isMatched = false
+    var seenCount = 0
     
     init() {
         self.uuid = UUID().uuidString

@@ -29,12 +29,14 @@ class ConcentrationGame {
                     cards[index].isMatched = true
                 }
                 cards[index].isFaceUp = true
+                cards[index].seenCount += 1
                 faceUpCardIndex = nil
             } else {
                 for flipDownIndex in cards.indices {
                     cards[flipDownIndex].isFaceUp = false
                 }
                 cards[index].isFaceUp = true
+                cards[index].seenCount += 1
                 faceUpCardIndex = index
             }
         }

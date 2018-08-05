@@ -4,7 +4,7 @@
 [![Swift Version][swift-image]][swift-url]
 [![Build Status][travis-image]][travis-url]
 [![License][license-image]][license-url]
-[![Platform](https://developer.apple.com/ios/)
+[![Platform](https://img.shields.io/cocoapods/p/LFAlertController.svg?style=flat)](https://developer.apple.com/ios/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 ![](concentration_game_example.png)
@@ -52,7 +52,7 @@ Reysmer Valle – [@ReysmerWVR](http://twitter.com/ValleReysmer)
 
  ## License
  
- Concentration Game is (c) 2018 Reysmer Valle ([@ValleReysmer]) and may be freely distributed under the [icense-url]. See the `MIT-LICENSE` file.
+ Concentration Game is (c) 2018 Reysmer Valle ([@ValleReysmer]) and may be freely distributed under the [license-url]. See the `MIT-LICENSE` file.
 
 [swift-image]:https://img.shields.io/badge/swift-4.0-orange.svg
 [swift-url]: https://swift.org/

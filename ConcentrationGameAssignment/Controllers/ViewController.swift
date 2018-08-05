@@ -9,7 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
     @IBOutlet var cardButtons: [UIButton]!
     
     @IBOutlet weak var flipCountLabel: UILabel!
@@ -22,14 +23,12 @@ class ViewController: UIViewController {
     
     var flipCount: Int = 0 {
         didSet {
-            print("Called after setting the new value on flipCount")
             flipCountLabel.text = "Flips: \(flipCount)"
         }
     }
     
     var scoreCount: Int = 0 {
         didSet {
-            print("Called after setting the new value on scoreCount")
             scoreCountLabel.text = "Score: \(scoreCount)"
         }
     }
@@ -44,17 +43,10 @@ class ViewController: UIViewController {
     
     @IBAction func touchCard(_ sender: UIButton) {
         if let cardNumber = cardButtons.index(of: sender) {
+            sender.isUserInteractionEnabled = false
             concentrationGame?.selectCard(at: cardNumber)
             updateViewFromModel()
-            let card = concentrationGame!.cards[cardNumber]
-            if(!card.isMatched) {
-                flipCount += 1
-                if(card.seenCount > 1 && scoreCount > 0) {
-                    scoreCount = scoreCount - 1
-                }
-            } else {
-                scoreCount += 2
-            }
+            updateLabels(at: cardNumber)
         }
     }
         
@@ -73,16 +65,38 @@ class ViewController: UIViewController {
             if card.isFaceUp {
                 button.setTitle(getEmoji(for: card), for: UIControlState.normal)
                 button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+                if(concentrationGame?.isEnded == true) {
+                    button.setTitle("", for: UIControlState.normal)
+                }
             } else {
                 button.setTitle("", for: UIControlState.normal)
-                button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                if(card.isMatched) {
+                    button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+                    button.isUserInteractionEnabled = false
+                } else {
+                    button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+                    button.isUserInteractionEnabled = true
+                }
             }
+        }
+    }
+    
+    func updateLabels(at cardNumber: Int) -> Void {
+        let card = concentrationGame!.cards[cardNumber]
+        if(!card.isMatched) {
+            flipCount += 1
+            if(card.seenCount > 1 && scoreCount > 0) {
+                scoreCount = scoreCount - 1
+            }
+        } else {
+            scoreCount += 2
         }
     }
     
     func resetView() {
         for index in cardButtons.indices {
             let button = cardButtons[index]
+            button.isUserInteractionEnabled = true
             button.setTitle("", for: UIControlState.normal)
              button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         }

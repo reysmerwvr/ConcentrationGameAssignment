@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
     @IBOutlet var cardButtons: [UIButton]!
     
     @IBOutlet weak var flipCountLabel: UILabel!

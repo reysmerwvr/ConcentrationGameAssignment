@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		930F69E521121B7C004A4EE5 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930F69E421121B7C004A4EE5 /* Helpers.swift */; };
-		930F69E821169735004A4EE5 /* concentration_game_example.png in Resources */ = {isa = PBXBuildFile; fileRef = 930F69E721169735004A4EE5 /* concentration_game_example.png */; };
-		930F69EB2116A9FA004A4EE5 /* ConcentrationGameAssignment in Resources */ = {isa = PBXBuildFile; fileRef = 930F69EA2116A9F9004A4EE5 /* ConcentrationGameAssignment */; };
-		930F69ED2116AB03004A4EE5 /* ConcentrationGameAssignment in Resources */ = {isa = PBXBuildFile; fileRef = 930F69EC2116AB03004A4EE5 /* ConcentrationGameAssignment */; };
 		93701F85210AB4AA005F2562 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93701F84210AB4AA005F2562 /* Card.swift */; };
 		93701F89210ABF62005F2562 /* ConcentrationGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93701F88210ABF62005F2562 /* ConcentrationGame.swift */; };
 		93701F8C210E4FE5005F2562 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93701F8B210E4FE5005F2562 /* Theme.swift */; };
@@ -24,10 +21,7 @@
 /* Begin PBXFileReference section */
 		930F69E421121B7C004A4EE5 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		930F69E62116953E004A4EE5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		930F69E721169735004A4EE5 /* concentration_game_example.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = concentration_game_example.png; path = ../../../Desktop/concentration_game_example.png; sourceTree = "<group>"; };
 		930F69E92116A4C4004A4EE5 /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
-		930F69EA2116A9F9004A4EE5 /* ConcentrationGameAssignment */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ConcentrationGameAssignment; sourceTree = "<group>"; };
-		930F69EC2116AB03004A4EE5 /* ConcentrationGameAssignment */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ConcentrationGameAssignment; sourceTree = "<group>"; };
 		93701F84210AB4AA005F2562 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		93701F88210ABF62005F2562 /* ConcentrationGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationGame.swift; sourceTree = "<group>"; };
 		93701F8B210E4FE5005F2562 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -98,9 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				930F69E92116A4C4004A4EE5 /* LICENSE.md */,
-				930F69E721169735004A4EE5 /* concentration_game_example.png */,
-				930F69EA2116A9F9004A4EE5 /* ConcentrationGameAssignment */,
-				930F69EC2116AB03004A4EE5 /* ConcentrationGameAssignment */,
 				930F69E62116953E004A4EE5 /* README.md */,
 				93D777FC20F300CC009CF0CA /* ConcentrationGameAssignment */,
 				93D777FB20F300CC009CF0CA /* Products */,
@@ -187,12 +178,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				930F69E821169735004A4EE5 /* concentration_game_example.png in Resources */,
 				93D7780820F300D2009CF0CA /* LaunchScreen.storyboard in Resources */,
-				930F69EB2116A9FA004A4EE5 /* ConcentrationGameAssignment in Resources */,
 				93D7780520F300D2009CF0CA /* Assets.xcassets in Resources */,
 				93D7780320F300CC009CF0CA /* Main.storyboard in Resources */,
-				930F69ED2116AB03004A4EE5 /* ConcentrationGameAssignment in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

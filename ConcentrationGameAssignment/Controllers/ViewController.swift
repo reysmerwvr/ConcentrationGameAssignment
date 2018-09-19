@@ -10,37 +10,55 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var cardButtons: [UIButton]!
+    @IBOutlet private var cardButtons: [UIButton]!
     
-    @IBOutlet weak var flipCountLabel: UILabel!
-    
-    @IBOutlet weak var scoreCountLabel: UILabel!
-    
-    var concentrationGame: ConcentrationGame?
-    
-    var theme: Theme?
-    
-    var flipCount: Int = 0 {
+    @IBOutlet private weak var flipCountLabel: UILabel! {
         didSet {
-            flipCountLabel.text = "Flips: \(flipCount)"
+            updateFlipCountLabel()
         }
     }
     
-    var scoreCount: Int = 0 {
+    @IBOutlet private weak var scoreCountLabel: UILabel!
+    
+    private var concentrationGame: ConcentrationGame?
+    
+    private var theme: Theme?
+    
+    private(set) var flipCount: Int = 0 {
+        didSet {
+            updateFlipCountLabel()
+        }
+    }
+    
+    private(set) var scoreCount: Int = 0 {
         didSet {
             scoreCountLabel.text = "Score: \(scoreCount)"
         }
     }
     
-    var emoji: Dictionary<String, String> = Dictionary<String, String>()
+    private var emoji: Dictionary<Card, String> = Dictionary<Card, String>()
+    
+    private var numberOfPairsOfCards: Int {
+        return (cardButtons.count + 1) / 2
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.concentrationGame = ConcentrationGame(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+        self.concentrationGame = ConcentrationGame(numberOfPairsOfCards: numberOfPairsOfCards)
         self.theme = Theme()
     }
     
-    @IBAction func touchCard(_ sender: UIButton) {
+    private func updateFlipCountLabel() {
+        let attributes: [NSAttributedString.Key: Any] = [
+            .strokeWidth : 3.0,
+            .strokeColor : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        ]
+        let attributedString = NSAttributedString(
+            string: "Flips: \(flipCount)", attributes: attributes)
+        flipCountLabel.attributedText = attributedString
+    }
+    
+    @IBAction private func touchCard(_ sender: UIButton) {
         if let cardNumber = cardButtons.index(of: sender) {
             sender.isUserInteractionEnabled = false
             concentrationGame?.selectCard(at: cardNumber)
@@ -49,26 +67,26 @@ class ViewController: UIViewController {
         }
     }
         
-    @IBAction func setNewGame(_ sender: UIButton) {
-        self.concentrationGame = ConcentrationGame(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+    @IBAction private func setNewGame(_ sender: UIButton) {
+        self.concentrationGame = ConcentrationGame(numberOfPairsOfCards: numberOfPairsOfCards)
         self.theme = Theme()
         self.flipCount = 0
         self.scoreCount = 0
         resetView()
     }
     
-    func updateViewFromModel() -> Void {
+    private func updateViewFromModel() -> Void {
         for index in cardButtons.indices {
             let button = cardButtons[index]
             let card = concentrationGame!.cards[index]
             if card.isFaceUp {
-                button.setTitle(getEmoji(for: card), for: UIControlState.normal)
+                button.setTitle(getEmoji(for: card), for: UIControl.State.normal)
                 button.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
                 if(concentrationGame?.isEnded == true) {
-                    button.setTitle("", for: UIControlState.normal)
+                    button.setTitle("", for: UIControl.State.normal)
                 }
             } else {
-                button.setTitle("", for: UIControlState.normal)
+                button.setTitle("", for: UIControl.State.normal)
                 if(card.isMatched) {
                     button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
                     button.isUserInteractionEnabled = false
@@ -80,7 +98,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateLabels(at cardNumber: Int) -> Void {
+    private func updateLabels(at cardNumber: Int) -> Void {
         let card = concentrationGame!.cards[cardNumber]
         if(!card.isMatched) {
             flipCount += 1
@@ -92,23 +110,33 @@ class ViewController: UIViewController {
         }
     }
     
-    func resetView() {
+    private func resetView() {
         for index in cardButtons.indices {
             let button = cardButtons[index]
             button.isUserInteractionEnabled = true
-            button.setTitle("", for: UIControlState.normal)
+            button.setTitle("", for: UIControl.State.normal)
              button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         }
     }
     
-    func getEmoji(for card: Card) -> String {
+    private func getEmoji(for card: Card) -> String {
         let emojiThemeCount = theme!.emojies.count
-        if emoji[card.uuid] == nil, emojiThemeCount > 0 {
-            let randomIndex = Int(arc4random_uniform(UInt32(emojiThemeCount)))
-            emoji[card.uuid] = theme!.emojies.remove(at: randomIndex)
+        if emoji[card] == nil, emojiThemeCount > 0 {
+            emoji[card] = theme!.emojies.remove(at: emojiThemeCount.arc4random)
         }
-        return emoji[card.uuid] ?? "?"
+        return emoji[card] ?? "?"
     }
-    
+}
+
+extension Int {
+    var arc4random: Int {
+        if self > 0 {
+            return Int(arc4random_uniform(UInt32(self)))
+        } else if self < 0 {
+            return -Int(arc4random_uniform(UInt32(abs(self))))
+        } else {
+            return 0
+        }
+    }
 }
 

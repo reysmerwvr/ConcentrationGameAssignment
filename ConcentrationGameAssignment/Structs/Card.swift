@@ -8,13 +8,27 @@
 
 import Foundation
 
-struct Card {
-    var uuid: String
+struct Card: Hashable {
+    
+    var hashValue: Int { return indentifier }
+    var indentifier: Int
+//    var uuid: String
     var isFaceUp = false
     var isMatched = false
     var seenCount = 0
+    private static var identifierFactory = 0
+    
+    static func == (lhs: Card, rhs: Card) -> Bool {
+        return lhs.indentifier == rhs.indentifier
+    }
+    
+    private static func getUniqueIdentifier() -> Int {
+        identifierFactory += 1
+        return identifierFactory
+    }
     
     init() {
-        self.uuid = UUID().uuidString
+        //self.uuid = UUID().uuidString
+        self.indentifier = Card.getUniqueIdentifier()
     }
 }

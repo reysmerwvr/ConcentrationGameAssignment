@@ -48,16 +48,16 @@ We would love you for the contribution to **Concentration Game**, check the ``LI
 
 ## Meta
 
-Reysmer Valle – [@ReysmerWVR](http://twitter.com/ValleReysmer)
+Reysmer Valle – [@ReysmerWVR]
 
  ## License
  
- Concentration Game is (c) 2018 Reysmer Valle ([@ValleReysmer]) and may be freely distributed under the [license-url]. See the `MIT-LICENSE` file.
+ Concentration Game is (c) 2018 Reysmer Valle ([@ReysmerWVR]) and may be freely distributed under the [license-url]. See the `MIT-LICENSE` file.
 
-[swift-image]:https://img.shields.io/badge/swift-4.0-orange.svg
+[swift-image]: https://img.shields.io/badge/swift-4.0-orange.svg
 [swift-url]: https://swift.org/
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
 [license-url]: https://github.com/reysmerwvr/ConcentrationGameAssignment/tree/master/LICENSE.md
 [travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
-
+[@ReysmerWVR]: <http://twitter.com/ReysmerWVR>

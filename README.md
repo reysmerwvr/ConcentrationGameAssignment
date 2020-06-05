@@ -61,4 +61,3 @@ Reysmer Valle – [@ReysmerWVR]
 [travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
 [@ReysmerWVR]: <http://twitter.com/ReysmerWVR>
-

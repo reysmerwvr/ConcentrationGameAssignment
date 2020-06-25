@@ -1,4 +1,4 @@
-#  Concentration Game
+# Concentration Game
 > This project is about the popular concentration game i.e. Memory Game.
 
 [![Swift Version][swift-image]][swift-url]
@@ -50,14 +50,14 @@ We would love you for the contribution to **Concentration Game**, check the ``LI
 
 Reysmer Valle – [@ReysmerWVR]
 
- ## License
- 
- Concentration Game is (c) 2018 Reysmer Valle ([@ReysmerWVR]) and may be freely distributed under the [license-url]. See the `MIT-LICENSE` file.
+## License
+
+Concentration Game is (c) 2018 Reysmer Valle ([@ReysmerWVR]) and may be freely distributed under the [license-url]. See the `MIT-LICENSE` file.
 
 [swift-image]: https://img.shields.io/badge/swift-4.0-orange.svg
 [swift-url]: https://swift.org/
 [license-image]: https://img.shields.io/badge/License-MIT-blue.svg
-[license-url]: https://github.com/reysmerwvr/ConcentrationGameAssignment/tree/master/LICENSE.md
+[license-url]: https://github.com/reysmerwvr/ConcentrationGameAssignment/tree/master/LICENSE
 [travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
 [@ReysmerWVR]: <http://twitter.com/ReysmerWVR>

@@ -59,7 +59,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func touchCard(_ sender: UIButton) {
-        if let cardNumber = cardButtons.index(of: sender) {
+        if let cardNumber = cardButtons.firstIndex(of: sender) {
             sender.isUserInteractionEnabled = false
             concentrationGame?.selectCard(at: cardNumber)
             updateViewFromModel()

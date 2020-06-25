@@ -29,7 +29,7 @@
 
 ## Installation
 
-Concentration Game requires [iOS 11.4+](https://developer.apple.com/ios/) also requires[Xcode 9.4](https://developer.apple.com/xcode/) and [swift](https://developer.apple.com/swift/) to run.
+Concentration Game requires [iOS 11.4+](https://developer.apple.com/ios/) also requires [Xcode 9.4](https://developer.apple.com/xcode/) and [swift](https://developer.apple.com/swift/) to run.
 
 Download zip file and extract it [latest pre-built release](https://github.com/reysmerwvr/ConcentrationGameAssignment). Or clone the repository and open it using Xcode.
 

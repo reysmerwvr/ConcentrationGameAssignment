@@ -11,7 +11,7 @@ import Foundation
 struct Card: Hashable {
     
     var hashValue: Int { return indentifier }
-    var indentifier: Int
+    private var indentifier: Int
 //    var uuid: String
     var isFaceUp = false
     var isMatched = false

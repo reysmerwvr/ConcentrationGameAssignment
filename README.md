@@ -1,4 +1,5 @@
 # Concentration Game
+
 > This project is about the popular concentration game i.e. Memory Game.
 
 [![Swift Version][swift-image]][swift-url]
@@ -25,7 +26,7 @@
 
 ## Version
 
-1.0
+1.2.0
 
 ## Installation
 
